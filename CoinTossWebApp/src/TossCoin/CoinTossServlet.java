@@ -20,7 +20,7 @@ import com.GenerateRandom.RandomNumberGenerate;
 @WebServlet("/CoinTossServlet")
 public class CoinTossServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static int count = 1;
+	private static int count =0;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,7 +39,7 @@ public class CoinTossServlet extends HttpServlet {
 			String htmlRespone = "<html>";
 			htmlRespone += "<h2 style=\"color:Orange\"> Your Result is: " + content + "</h2>";
 			htmlRespone += "<body style=\"color:white;background-color:green\">" + "<form action=\"CoinTossServlet\">"
-					+ "  <input type=\"submit\" value=\"Toss\"/>" + "</form>"+"<h6>Your number of chances left: "+(10-count)+ "</body>" + "</html>";
+					+ "  <input type=\"submit\" value=\"Toss\"/>" + "</form>"+"<h6>Your number of chances left: "+((10-count)-1)+ "</body>" + "</html>";
            count++;
 			writer.println(htmlRespone);
 		} catch (Exception e) {
